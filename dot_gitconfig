@@ -1,0 +1,57 @@
+[user]
+	email = bjoerger@goteleport.com
+	name = joerger
+[core]
+	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[alias]
+	please = push --force-with-lease
+	ga = git add
+	gaa = git add .
+	gaaa = git add --all
+	gau = git add --update
+	gb = git branch
+	gbd = git branch --delete 
+	gc = git commit
+	gcm = git commit --message
+	gcf = git commit --fixup
+	gco = git checkout
+	gcob = git checkout -b
+	gcom = git checkout master
+	gcos = git checkout staging
+	gcod = git checkout develop
+	gd = git diff
+	gda = git diff HEAD
+	glg = git log --graph --oneline --decorate --all
+	gld = git log --pretty=format:"%h %ad %s" --date=short --all
+	gm = git merge --no-ff
+	gma = git merge --abort
+	gmc = git merge --continue
+	gp = git pull
+	gpr = git pull --rebase
+	gr = git rebase
+	gs = git status
+	gss = git status --short
+	gst = git stash
+	gsta = git stash apply
+	gstd = git stash drop
+	gstl = git stash list
+	gstp = git stash pop
+	gsts = git stash save
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

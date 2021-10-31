@@ -1,0 +1,14 @@
+GRAVITATIONAL=$HOME/gravitational
+TELEPORT=$GRAVITATIONAL/teleport
+TELEPORT_PLUGINS=$GRAVITATIONAL/teleport-plugins
+TPCONF=$GRAVITATIONAL/teleport-config
+
+hash -d g=$GRAVITATIONAL
+hash -d t=$TELEPORT
+hash -d p=$TELEPORT_PLUGINS
+hash -d c=$TPCONF
+
+alias make-local='make -C ~c/local'
+
+TELEPORT_BIN=$TELEPORT/build
+export PATH=$PATH:$TELEPORT_BIN
