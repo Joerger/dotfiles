@@ -23,7 +23,7 @@ tar -C $TOOLS -xzf code-stable-x64-1639562789.tar.gz
 rm code-stable-x64-1639562789.tar.gz
 
 sudo apt update
-sudo apt install --yes bat ripgrep zsh
+sudo apt install --yes bat ripgrep zsh git
 
 chsh -s $(which zsh)
 ln -s /usr/bin/batcat $TOOL_BIN/bat
