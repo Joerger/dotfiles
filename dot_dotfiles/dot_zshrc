@@ -142,3 +142,6 @@ for f (~/.functions/*.zsh) source $f
 
 export PATH=$PATH:/opt/homebrew/bin
 source $DOT/.bindkeys_rc
+
+# Add source for non-public source file
+source $DOT/.other

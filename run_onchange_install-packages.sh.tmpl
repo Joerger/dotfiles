@@ -8,7 +8,7 @@ ln -s $TOOLS/diff-so-fancy/diff-so-fancy $TOOL_BIN
 
 {{ if eq .chezmoi.os "linux" -}}
 
-GO_VERSION=1.17.6
+GO_VERSION=1.17.8
 rm -rf $TOOLS/go
 curl -L -O "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz"
 tar -C $TOOLS -xzf go${GO_VERSION}.linux-amd64.tar.gz
