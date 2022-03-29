@@ -9,6 +9,8 @@ hash -d p=$TELEPORT_PLUGINS
 hash -d c=$TPCONF
 
 alias make-local='make -C ~c/local'
+alias make-ec2='make -C ~c/terraform/ec2'
 
 TELEPORT_BIN=$TELEPORT/build
-export PATH=$PATH:$TELEPORT_BIN
+TELEPORT_BIN_E=$TELEPORT/e/build
+export PATH=$PATH:$TELEPORT_BIN:$TELEPORT_BIN_E

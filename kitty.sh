@@ -1,3 +1,5 @@
+#!/bin/sh
+
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 # Create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in
@@ -13,4 +15,4 @@ sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x2
 
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
 
-
+ln -s $TERMINFO ~/.terminfo
