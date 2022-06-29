@@ -6,12 +6,15 @@ rm -rf $TOOL_BIN
 mkdir -p $TOOL_BIN
 ln -s $TOOLS/diff-so-fancy/diff-so-fancy $TOOL_BIN
 
+ln -s $HOME/.local/share/chezmoi/bin/chezmoi $TOOL_BIN
+
 {{ if eq .chezmoi.os "linux" -}}
 
-GO_VERSION=1.17.8
-rm -rf $TOOLS/go
+GO_VERSION=1.19
+mkdir $TOOLS/go
 curl -L -O "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz"
-tar -C $TOOLS -xzf go${GO_VERSION}.linux-amd64.tar.gz
+tar -xzf go${GO_VERSION}.linux-amd64.tar.gz
+mv go $TOOLS/go/$GO_VERSION
 rm go${GO_VERSION}.linux-amd64.tar.gz
 
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-363.0.0-linux-x86_64.tar.gz
@@ -22,12 +25,16 @@ curl -O https://az764295.vo.msecnd.net/stable/899d46d82c4c95423fb7e10e68eba52050
 tar -C $TOOLS -xzf code-stable-x64-1639562789.tar.gz
 rm code-stable-x64-1639562789.tar.gz
 
+curl -JLO "https://dl.filippo.io/mkcert/latest?for=linux/amd64"
+chmod +x mkcert-v*-linux-amd64
+mv mkcert-v*-linux-amd64 $TOOL_BIN/mkcert
+
 sudo apt update
-sudo apt install --yes bat ripgrep zsh git
+sudo apt install --yes bat zsh git
 
 chsh -s $(which zsh)
 ln -s /usr/bin/batcat $TOOL_BIN/bat
-ln -s $TOOLS/go/bin/* $TOOL_BIN
+ln -s $TOOLS/go/$GO_VERSION/bin/* $TOOL_BIN
 ln -s $TOOLS/google-cloud-sdk/bin/* $TOOL_BIN
 ln -s $TOOLS/VSCode-linux-x64/bin/* $TOOL_BIN
 

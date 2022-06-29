@@ -3,14 +3,16 @@ TELEPORT=$GRAVITATIONAL/teleport
 TELEPORT_PLUGINS=$GRAVITATIONAL/teleport-plugins
 TPCONF=$GRAVITATIONAL/teleport-config
 
+TELEPORT_BIN=$TELEPORT/build
+TELEPORT_BIN_E=$TELEPORT/e/build
+export PATH=$PATH:$TELEPORT_BIN:$TELEPORT_BIN_E
+
 hash -d g=$GRAVITATIONAL
 hash -d t=$TELEPORT
 hash -d p=$TELEPORT_PLUGINS
 hash -d c=$TPCONF
+hash -d r=$TPCONF/local/releases
 
 alias make-local='make -C ~c/local'
 alias make-ec2='make -C ~c/terraform/ec2'
-
-TELEPORT_BIN=$TELEPORT/build
-TELEPORT_BIN_E=$TELEPORT/e/build
-export PATH=$PATH:$TELEPORT_BIN:$TELEPORT_BIN_E
+alias tsh-login='tsh login --proxy=proxy.example.com --user=dev'
