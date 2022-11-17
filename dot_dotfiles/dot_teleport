@@ -16,3 +16,6 @@ hash -d r=$TPCONF/local/releases
 alias make-local='make -C ~c/local'
 alias make-ec2='make -C ~c/terraform/ec2'
 alias tsh-login='tsh login --proxy=proxy.example.com --user=dev'
+
+export AWS_PROFILE=teleport-dev
+export PIV=dynamic
