@@ -16,4 +16,5 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo gpasswd -a $USER docker
+newgrp docker
